@@ -13,7 +13,7 @@ driver = webdriver.Chrome(chrome_options= option)
 config = Config()
 
 def buscar_notebook(driver):
-    #Acessanado o site da kabum
+    #Acessando o site da kabum
     try:
         driver.get(config.URL)
         #Tentando fechar o consentimento de cookies, só prosseguir quando fechar
@@ -22,8 +22,8 @@ def buscar_notebook(driver):
         except:
             pass
         sleep(3)
-        #Acessando a barra de busca do site ele aparece tanto a busca inteligente quanto busca norma, mudando o seu id;
-        #Realizando a busca da kabum tanto para busca inteligente quando para busca normal
+        #Acessando a barra de busca do site, ele aparece tanto a busca inteligente quanto busca normal, mudando o seu id;
+        #Realizando a busca da kabum tanto para busca inteligente quanto para busca normal
         try:
             elem = driver.find_element_by_id('smarthint-search-input')
             elem.send_keys('notebook')
@@ -56,15 +56,16 @@ def buscar_notebook(driver):
         sleep(2)
         #Guardando nome do produto que está no carrinho para verificação
         nome_produto_carrinho = driver.find_element_by_class_name('productName').text
-        #Realizando a verificação do produto; conferir se o produto clicado inicialmente é o mesmo do produto do carrinho 
+        #Realizando a verificação do produto; conferir se o produto clicado inicialmente é o mesmo produto do carrinho 
         if nome_produto == nome_produto_carrinho:
             print("Produto validado!")
         else:
             print("Produto Incorreto!")
         sleep(2)
+        #Após verificação, fechar navegador
         driver.quit()
 
-    #Caso dê algum erro no meio do caminho, exibir erro e fechar navegador
+    #Caso dê algum erro no meio do processo, exibir erro e fechar navegador
     except Exception as e:
         print(e)
         try:
