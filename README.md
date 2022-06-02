@@ -1,5 +1,5 @@
 # Teste-Kabum
-O teste foi feito na linguagem Python e simula a compra do primeiro produto que aparece quando se realiza a pesquisa no site.
+O teste foi feito na linguagem Python e simula a compra do primeiro produto que aparece na lista de produtos do site quando se realiza a pesquisa.
 
 ## Instalação
 - Python 3.7.9
